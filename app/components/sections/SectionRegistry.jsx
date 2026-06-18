@@ -28,6 +28,35 @@ function phoneHref(phone) {
   return phone ? `tel:${phone}` : "#contact";
 }
 
+const INTERNAL_COPY_PATTERNS = [
+  /mobile performance is poor/i,
+  /compress images/i,
+  /unused scripts/i,
+  /hosting\/cache/i,
+  /prioritize above-fold/i,
+  /\bquality score\b/i,
+  /\bopportunity score\b/i,
+  /\bsales opportunity\b/i,
+  /\baudit\b/i,
+  /\bweakness/i,
+  /\bfailure/i,
+  /\bmissing item/i,
+  /\btechnical problem/i,
+  /\blighthouse\b/i
+];
+
+function isPublicCopy(value) {
+  const text = String(value || "").trim();
+  if (!text) return false;
+  if (/(\bq\s+\d+\b|\bo\s+\d+\b)/i.test(text)) return false;
+  return !INTERNAL_COPY_PATTERNS.some((pattern) => pattern.test(text));
+}
+
+function publicCopy(value, fallback = "") {
+  const text = String(value || "").trim();
+  return isPublicCopy(text) ? text : fallback;
+}
+
 function publicTrustItems(value) {
   const blocked = [
     "website quality score",
@@ -45,6 +74,17 @@ function publicTrustItems(value) {
     if (/(\bq\s+\d+\b|\bo\s+\d+\b)/i.test(text)) return false;
     return !blocked.some((phrase) => text.includes(phrase));
   });
+}
+
+function publicStatsItems(value) {
+  const stats = items(value);
+  const filtered = stats.filter((item) => {
+    const text = `${item.value || ""} ${item.title || ""} ${item.label || ""}`.toLowerCase();
+    if (/(\bq\s+\d+\b|\bo\s+\d+\b)/i.test(text)) return false;
+    return !INTERNAL_COPY_PATTERNS.some((pattern) => pattern.test(text));
+  });
+
+  return filtered.length >= 2 ? filtered : [];
 }
 
 export function HeroSection({ props }) {
@@ -71,10 +111,12 @@ export function HeroSection({ props }) {
             <a className="primary-link" href={callHref}>{props.primaryCta}</a>
             <a className="secondary-link" href="#services">{props.secondaryCta}</a>
           </div>
-          <div className="hero-proof">
-            <Star size={17} />
-            <span>{props.proof}</span>
-          </div>
+          {isPublicCopy(props.proof) ? (
+            <div className="hero-proof">
+              <Star size={17} />
+              <span>{props.proof}</span>
+            </div>
+          ) : null}
         </div>
 
         <div className="hero-showcase" aria-hidden="true">
@@ -93,9 +135,12 @@ export function HeroSection({ props }) {
 }
 
 export function StatsSection({ props }) {
+  const stats = publicStatsItems(props.items);
+  if (!stats.length) return null;
+
   return (
     <section className="stats-strip">
-      {items(props.items).slice(0, 3).map((stat, index) => (
+      {stats.slice(0, 3).map((stat, index) => (
         <div key={`${stat.value}-${index}`}>
           <strong>{stat.value}</strong>
           <span>{stat.label}</span>
@@ -148,7 +193,7 @@ export function StorySection({ props }) {
         <h2>{props.title}</h2>
       </div>
       <div className="story-body">
-        <p>{props.body}</p>
+        <p>{publicCopy(props.body, `${props.businessName || "This business"} can use this preview to make services, trust details, and contact options easier to find.`)}</p>
         <div className="image-pair">
           {items(props.images).slice(0, 2).map((src, index) => (
             <img src={imageUrl(src)} alt={`${props.businessName} preview image ${index + 1}`} key={`${imageUrl(src)}-${index}`} />
@@ -654,7 +699,7 @@ export function FooterSection({ props }) {
     <footer className="preview-footer">
       <div>
         <strong>{props.businessName}</strong>
-        <p>{props.description}</p>
+        <p>{publicCopy(props.description, `${props.businessName || "This business"} website preview.`)}</p>
       </div>
       <div className="footer-links">
         {items(props.links).map((link, index) => (

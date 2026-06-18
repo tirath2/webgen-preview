@@ -637,15 +637,70 @@ cite {
 }
 
 .action-grid a {
+  position: relative;
   min-height: 128px;
   display: grid;
   align-content: center;
   justify-items: start;
   gap: 12px;
-  padding: 22px;
+  overflow: hidden;
+  padding: 24px;
   color: var(--ink);
   font-weight: 900;
   text-decoration: none;
+  isolation: isolate;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.action-grid a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 18% 16%, color-mix(in srgb, var(--accent), transparent 78%), transparent 34%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), color-mix(in srgb, var(--panel), var(--warm) 36%));
+  opacity: 0.86;
+}
+
+.action-grid a::after {
+  content: "->";
+  position: absolute;
+  right: 20px;
+  bottom: 18px;
+  color: color-mix(in srgb, var(--green), var(--ink) 18%);
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.action-grid a:first-child {
+  border-color: color-mix(in srgb, var(--green), white 44%);
+  box-shadow: 0 18px 54px color-mix(in srgb, var(--green), transparent 82%);
+}
+
+.action-grid a:first-child::before {
+  background:
+    radial-gradient(circle at 18% 16%, color-mix(in srgb, var(--accent), transparent 68%), transparent 34%),
+    linear-gradient(135deg, color-mix(in srgb, var(--green), white 82%), color-mix(in srgb, var(--panel), var(--warm) 20%));
+}
+
+.action-grid a svg {
+  width: 22px;
+  height: 22px;
+  box-sizing: content-box;
+  padding: 12px;
+  color: var(--green);
+  border: 1px solid color-mix(in srgb, var(--green), white 62%);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--panel), var(--green) 8%);
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--green), transparent 84%);
+}
+
+.action-grid a span {
+  max-width: calc(100% - 30px);
+  font-size: clamp(20px, 2.2vw, 26px);
+  line-height: 1.12;
 }
 
 .compact-card {
@@ -2818,12 +2873,49 @@ blockquote,
     grid-template-columns: 1fr;
   }
 
+  .service-grid {
+    gap: 26px;
+  }
+
   .service-card {
     min-height: auto;
   }
 
   .service-card img {
     height: 232px;
+  }
+
+  .action-grid {
+    gap: 18px;
+  }
+
+  .action-grid a {
+    min-height: 104px;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    align-content: center;
+    justify-items: stretch;
+    gap: 16px;
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .action-grid a::after {
+    position: static;
+    justify-self: end;
+    align-self: center;
+  }
+
+  .action-grid a svg {
+    width: 20px;
+    height: 20px;
+    padding: 11px;
+    border-radius: 14px;
+  }
+
+  .action-grid a span {
+    max-width: none;
+    font-size: 22px;
   }
 
   .signature-section,
@@ -2887,7 +2979,30 @@ blockquote,
 
   .gallery-band {
     width: 100%;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(238px, 78vw);
+    gap: 14px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    padding: 18px 18px 22px;
     border-radius: 0;
+    scrollbar-width: none;
+  }
+
+  .gallery-band::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-band img,
+  .gallery-band img:nth-child(2),
+  .gallery-band img:nth-child(3) {
+    width: 100%;
+    height: 330px;
+    align-self: stretch;
+    border-radius: 26px;
+    scroll-snap-align: center;
   }
 
   .motion-ready .preview-reveal.is-visible {
