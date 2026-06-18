@@ -2835,12 +2835,50 @@ blockquote,
   }
 
   .signature-section {
+    width: min(100% - 20px, 430px);
+    grid-template-columns: 1fr;
     min-height: auto;
   }
 
-  .signature-image,
+  .signature-image {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+
   .signature-image img {
-    min-height: 320px;
+    width: 100%;
+    min-height: 0;
+    height: 100%;
+    transform: none;
+  }
+
+  .signature-content {
+    padding: 28px 24px 30px;
+  }
+
+  .signature-content h2 {
+    font-size: clamp(34px, 10.5vw, 46px);
+    line-height: 1.02;
+  }
+
+  .menu-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    align-items: start;
+    padding: 18px 0;
+  }
+
+  .menu-row h3 {
+    font-size: clamp(23px, 7vw, 30px);
+  }
+
+  .menu-row p {
+    font-size: 16px;
+  }
+
+  .menu-row span {
+    width: fit-content;
+    white-space: normal;
   }
 
   .signature-content::before {
