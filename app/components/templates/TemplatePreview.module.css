@@ -29,8 +29,20 @@
   letter-spacing: 0.08em;
   min-height: 3.2rem;
   padding: 0.95rem 1.35rem;
+  position: relative;
   text-transform: uppercase;
   transition: transform 180ms ease, background 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.templateButton span {
+  color: inherit;
+  line-height: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+.templateButton svg {
+  flex: 0 0 auto;
 }
 
 .templateButton:hover {
@@ -1567,7 +1579,14 @@
   }
 
   .templateButton {
+    padding-left: 3.2rem;
+    padding-right: 3.2rem;
     width: 100%;
+  }
+
+  .templateButton svg {
+    position: absolute;
+    right: 1.75rem;
   }
 
   .darkFooter,
