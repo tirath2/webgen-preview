@@ -1,4 +1,5 @@
 import "./globals.css";
+import FirebaseAnalytics from "./components/FirebaseAnalytics.jsx";
 
 export const metadata = {
   title: "Website Preview",
@@ -8,7 +9,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <FirebaseAnalytics />
+      </body>
     </html>
   );
 }
