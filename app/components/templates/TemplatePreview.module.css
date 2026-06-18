@@ -542,8 +542,8 @@
   z-index: 1;
 }
 
-.dentalHero span,
-.dentalCta span,
+.dentalHero > div > span,
+.dentalCta > div > span,
 .dentalStories > p {
   color: var(--template-accent);
   display: inline-block;
@@ -853,7 +853,7 @@
   padding: 4rem 2.5rem;
 }
 
-.plumbingHero span:first-child {
+.plumbingHero > div > span:first-child {
   border: 1px solid var(--plumb-brass);
   color: var(--plumb-brass);
   display: inline-block;
@@ -1174,7 +1174,7 @@
   z-index: 1;
 }
 
-.physioHero span {
+.physioHero > div > span {
   background: #dbe1ff;
   border-radius: 999px;
   color: #00174b;
