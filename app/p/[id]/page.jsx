@@ -18,8 +18,8 @@ export async function generateMetadata({ params }) {
     const generation = await getWebsiteGenerationById(id);
     const content = generation?.content || {};
     return {
-      title: content?.hero?.headline || generation?.leads?.display_name || "Website Preview",
-      description: content?.hero?.subheadline || "Generated website preview"
+      title: content?.brand?.businessName || content?.hero?.headline || generation?.leads?.display_name || "Website Preview",
+      description: content?.fields?.heroBody || content?.hero?.subheadline || "Generated website preview"
     };
   } catch {
     return {

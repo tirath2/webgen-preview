@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>London Elite Roofing | Bespoke Roofing Architecture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#0a0f1d",
+                    "primary-container": "#131b2e",
+                    "error-container": "#441a1a",
+                    "surface-dim": "#05070a",
+                    "surface-bright": "#1e293b",
+                    "inverse-surface": "#f7f9fb",
+                    "background": "#020617",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#0f172a",
+                    "surface-container-highest": "#1e293b",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#dae2fd",
+                    "on-error": "#ffffff",
+                    "on-primary-container": "#94a3b8",
+                    "inverse-on-surface": "#020617",
+                    "tertiary-container": "#002114",
+                    "on-error-container": "#ffdad6",
+                    "inverse-primary": "#0051d5",
+                    "on-tertiary-fixed-variant": "#68dba9",
+                    "surface-container-high": "#1e293b",
+                    "primary-fixed": "#dae2fd",
+                    "on-tertiary-container": "#85f8c4",
+                    "surface": "#020617",
+                    "on-primary-fixed-variant": "#bec6e0",
+                    "on-background": "#f8fafc",
+                    "secondary-fixed": "#dbe1ff",
+                    "on-secondary-fixed": "#00174b",
+                    "surface-tint": "#316bf3",
+                    "outline": "#475569",
+                    "primary": "#ffffff",
+                    "tertiary-fixed-dim": "#68dba9",
+                    "on-secondary-fixed-variant": "#dbe1ff",
+                    "on-primary": "#020617",
+                    "on-secondary-container": "#ffffff",
+                    "on-tertiary-fixed": "#002114",
+                    "secondary-fixed-dim": "#b4c5ff",
+                    "on-surface": "#f1f5f9",
+                    "secondary": "#316bf3",
+                    "error": "#ff5449",
+                    "tertiary-fixed": "#85f8c4",
+                    "outline-variant": "#1e293b",
+                    "secondary-container": "#1e40af",
+                    "surface-variant": "#334155",
+                    "primary-fixed-dim": "#bec6e0",
+                    "tertiary": "#10b981",
+                    "on-surface-variant": "#94a3b8",
+                    "surface-container-lowest": "#020617"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0rem",
+                    "lg": "0.125rem",
+                    "xl": "0.25rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin": "40px",
+                    "gutter": "24px",
+                    "container-max": "1600px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-sm": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        @layer utilities {
+            .text-stroke {
+                -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+                color: transparent;
+            }
+            .mask-diagonal {
+                clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+            }
+            .mask-diagonal-reverse {
+                clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+            }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        .magnetic-btn {
+            transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .cinematic-glow {
+            box-shadow: 0 0 50px -12px rgba(49, 107, 243, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary selection:text-white overflow-x-hidden">
+<!-- Immersive Navigation -->
+<nav class="fixed top-0 w-full z-[100] transition-all duration-500 py-6" id="main-nav">
+<div class="max-w-container-max mx-auto px-margin flex justify-between items-end">
+<div class="text-2xl font-black tracking-tighter uppercase mix-blend-difference">
+            Elite<span class="text-secondary">.</span>Roofing
+        </div>
+<div class="hidden md:flex items-center gap-12">
+<a class="text-label-md tracking-widest uppercase hover:text-secondary transition-colors" href="#services">Architecture</a>
+<a class="text-label-md tracking-widest uppercase hover:text-secondary transition-colors" href="#transformations">Portfolio</a>
+<a class="text-label-md tracking-widest uppercase hover:text-secondary transition-colors" href="#contact">Consultation</a>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-3xl">menu_open</span>
+</div>
+</div>
+</nav>
+<main>
+<!-- Cinematic Hero Section -->
+<section class="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-background">
+<!-- Background Layer -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background z-10 opacity-80"></div>
+<img alt="Bespoke Slate Architecture" class="w-full h-full object-cover scale-105 opacity-40 grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs6mwG9eVCt_TE0Cy3wQbLtw2pwNMelA45HqV8O2TwveuMi-LJJi822Sl_SlZHZYZvfQfvw9FOHuabLQauq6bKlnBDFYnvgvmf07hDi8_XMyNhLM4TeEQhNlyaYlNjEmxrIZwhFt-wEnse2htkMRtEMgxtlQIg6Ely2WakLUQQFADGRBiWD_ndyhsAr2kUyOnShadsXKbgadTbE4--E1p5jJHxI8pkUVBJKOfQgbY_w_IFH1TrAHXzAmCQVOuvCW6vlOTGmWm1rjA"/>
+</div>
+<div class="relative z-20 w-full">
+<div class="max-w-container-max mx-auto px-margin">
+<div class="flex flex-col gap-0">
+<span class="text-secondary text-label-md tracking-[0.3em] uppercase mb-4 animate-pulse">Establishing Excellence Since 1998</span>
+<h1 class="text-[clamp(3rem,12vw,9rem)] font-black leading-[0.85] tracking-tighter uppercase italic -ml-2">
+                        Bespoke<br/>
+<span class="text-stroke">Roofing</span><br/>
+<span class="relative">
+                            Architecture
+                            <span class="absolute -right-12 top-1/2 w-24 h-[2px] bg-secondary hidden lg:block"></span>
+</span>
+</h1>
+</div>
+<div class="mt-12 lg:mt-0 lg:absolute lg:right-margin lg:bottom-24 lg:w-1/3">
+<p class="text-on-surface-variant text-body-lg mb-8 border-l border-secondary pl-6 leading-relaxed">
+                        Redefining the London skyline through structural integrity and aesthetic precision. VAT Registered specialist contractors for heritage and contemporary estates.
+                    </p>
+<div class="flex gap-8 items-center">
+<button class="group flex items-center gap-4 text-label-md uppercase tracking-widest font-bold">
+                            Explore Services
+                            <span class="w-12 h-12 rounded-full border border-outline flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
+<span class="material-symbols-outlined">north_east</span>
+</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stylized Trust Bar -->
+<section class="border-y border-outline-variant py-12 bg-surface-dim">
+<div class="max-w-container-max mx-auto px-margin">
+<div class="flex flex-wrap justify-between items-center gap-12 grayscale opacity-40 hover:opacity-100 transition-opacity">
+<span class="text-label-md font-black tracking-widest uppercase">Checkatrade Vetted</span>
+<span class="text-label-md font-black tracking-widest uppercase">SafeContractor</span>
+<span class="text-label-md font-black tracking-widest uppercase">CRC Member</span>
+<span class="text-label-md font-black tracking-widest uppercase">VAT: 123 4567 89</span>
+</div>
+</div>
+</section>
+<!-- Z-Pattern Service Section -->
+<section class="py-32 relative overflow-hidden" id="services">
+<!-- Block 1: Left Image -->
+<div class="flex flex-col lg:flex-row items-center mb-40 gap-16 lg:gap-0">
+<div class="w-full lg:w-3/5 h-[600px] mask-diagonal bg-surface-container overflow-hidden group">
+<img alt="Installation" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkxmy6zZIVQAfYy6ftHlZzRo5b0Ya5WszDNiwt062Gql7TmCcI0MQeJBr4aPLHg9reZ8va4UERroVkf8KyIGKCgp99hwIo_84u7u4ROF0S_V-cdjgaApwbx4qPkzoGCUhe7qhWM6OjotvFGRqMpW5mHjUL_4WWIGAd3tHkwMMN87YcWXoRutowC9a-Lfntu-mlLjeU9ie7pDayiEiVnCW9zOmvbQtcIwfgW3o2RVhLZauEdISO7gXdB3fqb1QjXB22bUMu3yenhww"/>
+</div>
+<div class="w-full lg:w-2/5 px-margin lg:-ml-32 relative z-30">
+<div class="p-12 bg-background border border-outline-variant cinematic-glow">
+<span class="text-secondary text-label-sm tracking-widest uppercase mb-4 block">Structural Engineering</span>
+<h3 class="text-5xl font-black uppercase mb-6 leading-none">New Roof<br/>Execution</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed">Full lifecycle management for slate and tile systems. Each installation is a 25-year commitment to performance.</p>
+<a class="inline-block border-b-2 border-secondary pb-1 text-label-md uppercase tracking-widest font-bold" href="#">View Specifications</a>
+</div>
+</div>
+</div>
+<!-- Block 2: Right Image -->
+<div class="flex flex-col lg:flex-row-reverse items-center gap-16 lg:gap-0">
+<div class="w-full lg:w-3/5 h-[600px] mask-diagonal-reverse bg-surface-container overflow-hidden group">
+<img alt="Leadwork" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8YyWDS_eQxwnJuRPP4fDkb6nW6AYy2CQdS117cIdHBMaahheM9L4YI3KLUvDRA2cLm2B3FeDyh0qAgCf8S8kXZafRpwE_u5VZ8L18t55EtswRyxD224pnEhFthTBPEj6g2WPbNtFmv9W_MMb4sruv9Ms-xf8TLDdq41K6A_AWiU2fSbeAV2VhzMfjjbKffIhqZ885DfLGexZet-t5BHRXsyN9T3ereA19A84GWG5ZhI0qagjBMtlds3KrVMYcOHNBGupEp4MDIkk"/>
+</div>
+<div class="w-full lg:w-2/5 px-margin lg:-mr-32 relative z-30">
+<div class="p-12 bg-background border border-outline-variant cinematic-glow">
+<span class="text-secondary text-label-sm tracking-widest uppercase mb-4 block">Specialist Craft</span>
+<h3 class="text-5xl font-black uppercase mb-6 leading-none">Heritage<br/>Leadwork</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed">Traditional welding and dressing for historical preservation. Precision-cut interfaces for chimney stacks and valleys.</p>
+<a class="inline-block border-b-2 border-secondary pb-1 text-label-md uppercase tracking-widest font-bold" href="#">Artisan Portfolio</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Overlapping Portfolio Section -->
+<section class="py-32 bg-surface-dim" id="transformations">
+<div class="max-w-container-max mx-auto px-margin">
+<div class="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<h2 class="text-6xl lg:text-8xl font-black uppercase tracking-tighter">The<br/><span class="text-stroke">Standard</span></h2>
+<div class="flex gap-4">
+<span class="w-12 h-12 rounded-full border border-outline flex items-center justify-center hover:bg-secondary cursor-pointer transition-colors">
+<span class="material-symbols-outlined">west</span>
+</span>
+<span class="w-12 h-12 rounded-full border border-outline flex items-center justify-center hover:bg-secondary cursor-pointer transition-colors">
+<span class="material-symbols-outlined">east</span>
+</span>
+</div>
+</div>
+<div class="grid lg:grid-cols-2 gap-24">
+<!-- Case Study 1 -->
+<div class="group relative">
+<div class="aspect-video overflow-hidden border border-outline-variant">
+<div class="flex h-full w-full">
+<div class="w-1/2 grayscale group-hover:grayscale-0 transition-all duration-700">
+<img alt="Before" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVod4oZoxK7A8uhkoYlrDLVDbU7GmhKVkNr18_xXvsDXLCIUNgSCaUWnmBRecM1Btx3_7Lbl4Rjv187UOkPiZppcYXCmEpguZnea5IoFu1DTgCQzma0aEHzhrcPghJhymsFWcZHgJolqE4qvFQMQ2fFDEjMlxThdsGHu0YKAlTwggEWoV4Rk8hPceDYe1ioOEw_xonX5Xt1BE6pItP94nWFPGC9ZS4svvaTSuc1lAs3tZAwCrHK7pZwDRpVl5huOD4dpi3MY6pXkc"/>
+</div>
+<div class="w-1/2">
+<img alt="After" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd86uf-GoFde10iWElJeiK2gNM1OcUqkLMGVvs77edbz1HPv7rAyugxlvWznIwi94BlFXrt6-gAF9WWNsZ7w_mjinM08Spu4oz5yYcHkMt9xs4cEzBcc6butGxcvubYi3yx1Ay9x1ovsMUXZ81ndHEFNOlbKT2BbMzv-TAoF7jFZtJ8M6HmxvDoiJXgpphz8bAZ1Hwfh9MktZehVQTJ0YSLYGgZULGNzXyi3Q2fmjtg4vWsOkyMr6vcbfSmPwKyJx-hTG9wyFF4Uo"/>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<span class="text-secondary text-label-sm uppercase tracking-widest">Hampstead Estate</span>
+<h4 class="text-3xl font-black uppercase mt-2">Victorian Restoration</h4>
+</div>
+</div>
+<!-- Case Study 2 -->
+<div class="group relative lg:mt-32">
+<div class="aspect-video overflow-hidden border border-outline-variant">
+<div class="flex h-full w-full">
+<div class="w-1/2 grayscale group-hover:grayscale-0 transition-all duration-700">
+<img alt="Before" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhat6D1l4p60G-hXWFohRRI1JdondCOl-Wsq2zGs2uDU1VJzCgMpkMc9DEBFPhJzLl70cXOHfVpHOxeEm4hc9S4F0faovv8cjnR-bQf820uMZklnckjO_iRM2MmBRrNLhIj7h8Urkw4WFBTGH3q59odLxe1hGczyphtSzzykIJzikut_P_3LIwVxkK-sfoxS0AmAsyO-J4ylka5odDidETXLvU1xlmDLpHxZh1wSGdQGb0ZiuOA-u02dRW-sg4Iu_SrkqhIoEbHec"/>
+</div>
+<div class="w-1/2">
+<img alt="After" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLytEXPWwJ4oE-hTV86QS_JjNn3ryBNIdKJ94ytuttbP-hio0yfCLo5mkFulqLR-n7bPFwriKFtxi4674FUMFVTnNUlxUu4TKHqkzCYZBngoZgT4VeKIfDEyYIiyDX3dur2mxWOD-jPNn1vzBsw_AQieN5zOS0kOSylaF2XVsk8OdiYWV7gkIdw5-WlGrfAVdwqUbAXJ5d88lpeszND6vfK_mZr3JR6bSFrLVVP75nkZjrsXzy61Gv_CTzWunRTKEV7htH1wQ2Rck"/>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<span class="text-secondary text-label-sm uppercase tracking-widest">Richmond Contemporary</span>
+<h4 class="text-3xl font-black uppercase mt-2">GRP Fibreglass Integration</h4>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Immersive Contact / Form -->
+<section class="py-40 bg-background" id="contact">
+<div class="max-w-container-max mx-auto px-margin">
+<div class="grid lg:grid-cols-5 gap-0 border border-outline-variant">
+<div class="lg:col-span-2 bg-surface-container p-16 flex flex-col justify-between">
+<div>
+<h2 class="text-5xl font-black uppercase leading-none mb-12">Secure<br/>Your<br/><span class="text-secondary">Structure</span></h2>
+<div class="space-y-8">
+<div class="flex items-center gap-6 group">
+<span class="material-symbols-outlined text-secondary group-hover:scale-125 transition-transform">call</span>
+<span class="text-xl font-bold tracking-tight">020 8123 4567</span>
+</div>
+<div class="flex items-center gap-6 group">
+<span class="material-symbols-outlined text-secondary group-hover:scale-125 transition-transform">mail</span>
+<span class="text-xl font-bold tracking-tight">bespoke@eliterofing.com</span>
+</div>
+</div>
+</div>
+<div class="mt-20">
+<div class="flex items-center gap-4 opacity-50">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-label-sm uppercase tracking-[0.2em]">Active Nationwide Coverage</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-3 p-16 bg-surface-dim">
+<form class="space-y-12">
+<div class="grid md:grid-cols-2 gap-12">
+<div class="relative group">
+<input class="w-full bg-transparent border-0 border-b border-outline focus:border-secondary transition-colors py-4 px-0 focus:ring-0 peer" placeholder=" " type="text"/>
+<label class="absolute left-0 top-4 text-on-surface-variant uppercase text-label-sm tracking-widest transition-all peer-focus:-top-4 peer-focus:text-secondary peer-[:not(:placeholder-shown)]:-top-4">Name</label>
+</div>
+<div class="relative group">
+<input class="w-full bg-transparent border-0 border-b border-outline focus:border-secondary transition-colors py-4 px-0 focus:ring-0 peer" placeholder=" " type="tel"/>
+<label class="absolute left-0 top-4 text-on-surface-variant uppercase text-label-sm tracking-widest transition-all peer-focus:-top-4 peer-focus:text-secondary peer-[:not(:placeholder-shown)]:-top-4">Phone</label>
+</div>
+</div>
+<div class="relative group">
+<select class="w-full bg-transparent border-0 border-b border-outline focus:border-secondary transition-colors py-4 px-0 focus:ring-0 appearance-none">
+<option class="bg-surface-container">Select Consultation Type...</option>
+<option class="bg-surface-container">Structural Restoration</option>
+<option class="bg-surface-container">Heritage Leadwork</option>
+<option class="bg-surface-container">Emergency Mitigation</option>
+</select>
+<label class="absolute left-0 -top-4 text-secondary uppercase text-label-sm tracking-widest">Architectural Need</label>
+</div>
+<div class="relative group">
+<textarea class="w-full bg-transparent border-0 border-b border-outline focus:border-secondary transition-colors py-4 px-0 focus:ring-0 peer" placeholder=" " rows="4"></textarea>
+<label class="absolute left-0 top-4 text-on-surface-variant uppercase text-label-sm tracking-widest transition-all peer-focus:-top-4 peer-focus:text-secondary peer-[:not(:placeholder-shown)]:-top-4">Project Brief</label>
+</div>
+<button class="w-full py-6 bg-secondary text-white font-black uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all cinematic-glow">
+                            Request Site Analysis
+                        </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Magnetic CTA -->
+<div class="fixed bottom-12 right-12 z-[100] hidden md:block">
+<button class="magnetic-btn w-32 h-32 bg-secondary rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-110 active:scale-95 group overflow-hidden relative" id="magnetic-cta">
+<span class="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500"></span>
+<span class="relative z-10 material-symbols-outlined text-4xl group-hover:text-black transition-colors">calendar_add_on</span>
+</button>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-dim border-t border-outline-variant py-16">
+<div class="max-w-container-max mx-auto px-margin flex flex-col md:flex-row justify-between items-center gap-12">
+<div class="text-center md:text-left">
+<div class="text-xl font-black uppercase tracking-tighter mb-2">Elite<span class="text-secondary">.</span>Roofing</div>
+<p class="text-on-surface-variant text-label-sm">Precision Engineering for Contemporary Living.</p>
+</div>
+<div class="flex flex-wrap gap-8 justify-center">
+<a class="text-label-sm uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity" href="#">Legal</a>
+<a class="text-label-sm uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity" href="#">Registry</a>
+<a class="text-label-sm uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity" href="#">Sitemap</a>
+</div>
+<div class="text-label-sm opacity-30">© 2024 ELITE ROOFING ARCHITECTURE. LONDON UK.</div>
+</div>
+</footer>
+<script>
+    // Magnetic Button Effect
+    const btn = document.getElementById('magnetic-cta');
+    if(btn) {
+        window.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - (rect.left + rect.width / 2);
+            const y = e.clientY - (rect.top + rect.height / 2);
+            const dist = Math.sqrt(x*x + y*y);
+            
+            if(dist < 150) {
+                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+            } else {
+                btn.style.transform = `translate(0px, 0px)`;
+            }
+        });
+    }
+
+    // Nav Scroll Effect
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('main-nav');
+        if (window.scrollY > 100) {
+            nav.classList.add('bg-background/80', 'backdrop-blur-xl', 'py-4', 'border-b', 'border-outline-variant');
+        } else {
+            nav.classList.remove('bg-background/80', 'backdrop-blur-xl', 'py-4', 'border-b', 'border-outline-variant');
+        }
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add('opacity-100');
+                entry.target.classList.remove('opacity-0', 'translate-y-10');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+        section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+        observer.observe(section);
+    });
+</script>
+</body></html>

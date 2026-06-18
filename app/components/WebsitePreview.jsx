@@ -1,4 +1,5 @@
 import RenderSection from "./sections/SectionRegistry.jsx";
+import TemplatePreview, { isTemplatePreviewContent } from "./templates/TemplatePreview.jsx";
 import PreviewMotion from "./PreviewMotion.jsx";
 import { designTokenStyle, resolveDesignConfig, resolveSections } from "@/lib/preview/config.js";
 
@@ -142,6 +143,11 @@ function relatedImages({ content, generation, lead }) {
 
 export default function WebsitePreview({ generation }) {
   const content = generation.content || {};
+
+  if (isTemplatePreviewContent(content)) {
+    return <TemplatePreview generation={generation} />;
+  }
+
   const lead = generation.leads || {};
   const locations = cleanArray(generation.lead_locations);
   const location = locations[0] || firstLocation(generation);
